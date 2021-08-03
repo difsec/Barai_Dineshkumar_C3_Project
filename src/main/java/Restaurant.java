@@ -69,7 +69,15 @@ public class Restaurant {
         return name;
     }
 
-    public int showPriceForMenu(String...strings) {
-        return 0;
+    public int showPriceForSelectedMenu(String...strings) {
+        int amount = 0;
+        for(String selectedItem: strings){
+            for(Item menuItem: menu) {
+                if (menuItem.getName().equals(selectedItem)){
+                    amount += menuItem.getPrice();
+                }
+            }
+        }
+        return amount;
     }
 }

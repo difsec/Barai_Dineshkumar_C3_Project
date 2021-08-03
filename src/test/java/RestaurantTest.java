@@ -13,6 +13,7 @@ class RestaurantTest {
     Restaurant restaurant;
     LocalTime openingTime = LocalTime.parse("10:30:00");
     LocalTime closingTime = LocalTime.parse("22:00:00");
+    //CODE REFACTORING NOT DONE FOR New Restaurant SINCE I AM MOCKING USING SPY IN TWO METHODS AND HENCE CANNOT USE @BeforeEach for all instances
     //REFACTOR ALL THE REPEATED LINES OF CODE
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>OPEN/CLOSED<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -76,7 +77,7 @@ class RestaurantTest {
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
         restaurant.addToMenu("noodles", 180);
-        int amount = restaurant.showPriceForMenu("noodles","Sweet corn soup");
-        assertEquals(234,amount);
+        int amount = restaurant.showPriceForSelectedMenu("noodles","Vegetable lasagne");
+        assertEquals(449,amount);
     }
 }
