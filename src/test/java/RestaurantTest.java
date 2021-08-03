@@ -69,4 +69,14 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void return_total_amount_for_the_items_selected_in_the_menu(){
+        restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("noodles", 180);
+        int amount = restaurant.showPriceForMenu("noodles","Sweet corn soup");
+        assertEquals(234,amount);
+    }
 }

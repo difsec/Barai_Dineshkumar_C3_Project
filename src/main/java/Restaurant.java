@@ -65,7 +65,11 @@ public class Restaurant {
     }
 
     public String getName() {
+
         return name;
     }
 
+    public int showPriceForMenu(String...strings) {
+        return 0;
+    }
 }
